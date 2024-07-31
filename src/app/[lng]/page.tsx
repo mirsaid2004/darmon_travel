@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useTranslation } from "../i18n";
+import Hero from "@/src/components/Hero";
 
 export default async function Page({
   params: { lng },
@@ -10,7 +11,7 @@ export default async function Page({
   return (
     <>
       <div className="h-full w-full">
-        <h1 className="text-center">Hello World</h1>
+        <Hero />
         <Link href={"/tour/1"}>Tour 1</Link>
       </div>
     </>
