@@ -1,5 +1,5 @@
 "use client";
-import React, { HTMLAttributes, useState } from "react";
+import React, { HTMLAttributes, useCallback, useEffect, useState } from "react";
 import { Button, Menu, MenuItem } from "@mui/material";
 import { Icon } from "@iconify/react";
 import uz from "@/public/assets/uz.png";
@@ -25,6 +25,19 @@ export default function LanguageComponent({
   const { t } = useTranslation(lng, "navbar");
   const [buttonStatus, setButtonStatus] = useState<null | HTMLElement>(null);
   const open = Boolean(buttonStatus);
+  const [fullPath, setFullPath] = useState<undefined | URL>();
+  useEffect(() => {
+    if (window) setFullPath(new URL(window.location.href));
+  }, []);
+  const changePath = useCallback(
+    (newLng: string) => {
+      if (fullPath) {
+        return fullPath?.pathname?.replace(lng, newLng);
+      }
+      return "";
+    },
+    [fullPath]
+  );
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setButtonStatus(event.currentTarget);
@@ -85,7 +98,10 @@ export default function LanguageComponent({
       >
         {langs.map((lang) => (
           <MenuItem onClick={handleClose} key={lang.id}>
-            <Link href={`/${lang.id}`} className="flex gap-2 items-center">
+            <Link
+              href={changePath(lang.id)}
+              className="flex gap-2 items-center"
+            >
               <Image
                 src={lang.img}
                 alt={lang.id}
