@@ -17,7 +17,10 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           input: {
-            padding: "10px",
+            padding: "10px 8px",
+          },
+          label: {
+            top: "-5px",
           },
         },
       },

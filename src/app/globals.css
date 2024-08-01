@@ -6,6 +6,7 @@
 :root {
   --primary: #004290;
   --secondary: #23af5f;
+  --modalColor: rgba(0, 66, 144, 0.5);
 }
 
 *,
@@ -29,5 +30,8 @@ body {
   }
   .bg-secondary {
     background-color: var(--secondary);
+  }
+  .bg-modal {
+    background-color: var(--modalColor);
   }
 }
