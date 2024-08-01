@@ -21,8 +21,8 @@ export default function Footer({ lng }: FooterType) {
           <div className="relative z-10 text-white max-w-[600px]">
             <p className="text-2xl">
               Biz har doim sizning savollaringiz va takliflaringizga ochiqmiz.
-              Biz bilan qulay usulda bog'laning, va bizning jamoamiz sizga imkon
-              qadar tezroq javob beradi.
+              Biz bilan qulay usulda bog&apos;laning, va bizning jamoamiz sizga
+              imkon qadar tezroq javob beradi.
             </p>
             <CallMeComponent />
           </div>
@@ -34,7 +34,7 @@ export default function Footer({ lng }: FooterType) {
           </h3>
           <h3 className="text-xl text-white inline-flex items-center gap-2">
             <Icon icon="mdi:location" />
-            Toshkent, O'zbekiston
+            Toshkent, O&apos;zbekiston
           </h3>
         </div>
         <div className="w-full flex justify-between">

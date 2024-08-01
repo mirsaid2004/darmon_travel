@@ -103,8 +103,8 @@ export default function BookBtn() {
               </div>
               <div className="flex flex-col items-center gap-5 my-10 px-4">
                 <p className="text-primary text-lg text-center animate-in slide-in-from-bottom fade-in-0 ease-in-out duration-200">
-                  Iltimos, operatorlarimiz siz bilan bog'lanishi uchun aloqa
-                  ma'lumotlaringizni qoldiring
+                  Iltimos, operatorlarimiz siz bilan bog&apos;lanishi uchun
+                  aloqa ma&apos;lumotlaringizni qoldiring
                 </p>
                 <TextField
                   fullWidth

@@ -25,7 +25,7 @@ export default function CallMeComponent() {
         className="bg-white rounded"
       />
       <Button color="secondary" variant="contained" style={{ color: "#fff" }}>
-        Menga Qo'ng'iroq qiling
+        Menga Qo&apos;ng&apos;iroq qiling
       </Button>
     </div>
   );
