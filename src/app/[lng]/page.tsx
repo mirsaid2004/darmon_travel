@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useTranslation } from "../i18n";
 import Hero from "@/src/components/Hero";
+import Tours from "@/src/components/Tours";
 
 export default async function Page({
   params: { lng },
@@ -11,8 +12,8 @@ export default async function Page({
   return (
     <>
       <div className="h-full w-full">
-        <Hero />
-        <Link href={"/tour/1"}>Tour 1</Link>
+        <Hero lng={lng} />
+        <Tours lng={lng} />
       </div>
     </>
   );

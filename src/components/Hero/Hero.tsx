@@ -2,9 +2,12 @@ import Image from "next/image";
 import React from "react";
 import globe from "@/public/assets/globe.png";
 import heroImg from "@/public/assets/heroImg.png";
-import { Button } from "@mui/material";
 import BookBtn from "./components/BookBtn";
-export default function Hero() {
+
+type HeroType = {
+  lng: supportedLangs;
+};
+export default function Hero({ lng }: HeroType) {
   return (
     <div className="w-full h-full md:h-screen pt-20">
       <div className="flex w-full m-auto md:h-full md:min-h-[564px] min-h-96 relative max-w-[1350px] p-4 overflow-hidden">

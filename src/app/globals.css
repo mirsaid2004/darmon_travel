@@ -35,4 +35,7 @@ body {
   .bg-modal {
     background-color: var(--modalColor);
   }
+  .bg-tours {
+    background-color: var(--lightblue);
+  }
 }

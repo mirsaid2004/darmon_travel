@@ -4,10 +4,10 @@ import {
   Box,
   Button,
   IconButton,
-  InputLabel,
   Modal,
   TextField,
-  autocompleteClasses,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import Backdrop from "@mui/material/Backdrop";
 import Fade from "@mui/material/Fade";
@@ -15,6 +15,7 @@ import { MuiTelInput } from "mui-tel-input";
 import React from "react";
 
 export default function BookBtn() {
+  const matches = useMediaQuery("(min-width:768px)");
   const [open, setOpen] = React.useState(false);
   const [name, setName] = React.useState("");
   const [phone, setPhone] = React.useState("");
@@ -45,9 +46,20 @@ export default function BookBtn() {
             lineHeight: "1.2",
           },
         })}
-        style={{}}
       >
-        Buyurtma berish
+        <span>
+          Buyurtma berish
+          <span
+            style={{
+              marginLeft: "5px",
+              fontSize: "25px",
+              fontWeight: "bold",
+              lineHeight: "1",
+            }}
+          >
+            {!matches && "↪"}
+          </span>
+        </span>
       </Button>
       <Modal
         aria-labelledby="transition-modal-title"
