@@ -8,6 +8,7 @@ import Image from "next/image";
 import { navItemList } from "../assets/navItemsList";
 import Link from "next/link";
 import { useTranslation } from "@/src/app/i18n/client";
+import ClientLink from "@/src/app/ui/ClientLink";
 
 type SidebarType = {
   lng: supportedLangs;
@@ -49,12 +50,13 @@ export default function Sidebar({ lng }: SidebarType) {
           <ul className="flex flex-col justify-center items-center list-none gap-5 flex-1">
             {navItemList.map((navItem) => (
               <li key={navItem.id}>
-                <Link
-                  href={`/${lng}/${navItem.id}`}
-                  className="text-primary text-xl font-medium"
+                <ClientLink
+                  to={`${navItem.id}`}
+                  className="text-primary text-xl font-medium p-2 cursor-pointer"
+                  activeClass="rounded-xl bg-tours"
                 >
                   {t(navItem.id)}
-                </Link>
+                </ClientLink>
               </li>
             ))}
             <LanguageComponent lng={lng} />

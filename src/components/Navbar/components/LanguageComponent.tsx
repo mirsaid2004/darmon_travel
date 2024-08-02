@@ -9,6 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "@/src/app/i18n/client";
 import clsx from "clsx";
+import { usePathname } from "next/navigation";
 
 type LanguageComponentType = {
   lng: supportedLangs;
@@ -23,20 +24,19 @@ export default function LanguageComponent({
   lng,
 }: LanguageComponentType) {
   const { t } = useTranslation(lng, "navbar");
+  const pathname = usePathname();
   const [buttonStatus, setButtonStatus] = useState<null | HTMLElement>(null);
   const open = Boolean(buttonStatus);
-  const [fullPath, setFullPath] = useState<undefined | URL>();
-  useEffect(() => {
-    if (window) setFullPath(new URL(window.location.href));
-  }, []);
+
   const changePath = useCallback(
     (newLng: string) => {
-      if (fullPath) {
-        return fullPath?.pathname?.replace(lng, newLng);
+      if (pathname) {
+        console.log(pathname);
+        return pathname?.replace(lng, newLng);
       }
       return "";
     },
-    [fullPath]
+    [pathname]
   );
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {

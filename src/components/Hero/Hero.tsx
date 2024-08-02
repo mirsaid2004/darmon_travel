@@ -9,8 +9,8 @@ type HeroType = {
 };
 export default function Hero({ lng }: HeroType) {
   return (
-    <div className="w-full h-full md:h-screen pt-20">
-      <div className="flex w-full m-auto md:h-full md:min-h-[564px] min-h-96 relative max-w-[1350px] p-4 overflow-hidden">
+    <div className="w-full h-full md:h-screen pt-20 sm:mb-0 mb-20">
+      <div className="relative flex w-full max-w-[1350px] md:h-full md:min-h-[564px] sm:min-h-[430px] min-h-96 m-auto sm:pt-6 pt-16 p-4 overflow-hidden">
         <div className="md:my-auto bottom-[15%] relative z-10">
           <h1 className="text-primary xl:text-[100px] md:text-7xl lm:text-5xl text-4xl font-bold uppercase lm:mb-10 mb-5 leading-none animate-in slide-in-from-left fade-in-0 ease-in-out duration-500">
             Dunyo Sizni <br /> Kutmoqda

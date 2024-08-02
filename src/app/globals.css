@@ -8,12 +8,25 @@
   --secondary: #23af5f;
   --modalColor: rgba(0, 66, 144, 0.5);
   --lightblue: rgba(241, 243, 255, 1);
+  --fancyblue: rgba(84, 255, 234, 1);
 }
 
 *,
 *::after,
 *::before {
   box-sizing: border-box;
+}
+
+@media screen and (max-width: 1023px) {
+  .about_text br {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 360px) {
+  .priority-card {
+    min-width: 280px;
+    width: 100%;
+  }
 }
 
 body {
@@ -25,6 +38,9 @@ body {
 @layer utilities {
   .text-primary {
     color: var(--primary);
+  }
+  .text-fancyblue {
+    color: var(--fancyblue);
   }
   .bg-primary {
     background-color: var(--primary);
@@ -38,4 +54,37 @@ body {
   .bg-tours {
     background-color: var(--lightblue);
   }
+}
+
+.tourSwiper {
+  position: relative;
+}
+
+.tourSwiperBeginning::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  z-index: 11;
+  background: linear-gradient(
+    to left,
+    rgba(241, 243, 255, 0.05),
+    rgba(241, 243, 255, 1) 80%
+  );
+}
+.tourSwiperEnding::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  z-index: 11;
+  background: linear-gradient(
+    to right,
+    rgba(241, 243, 255, 0.05),
+    rgba(241, 243, 255, 1) 80%
+  );
 }

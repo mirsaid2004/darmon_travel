@@ -81,7 +81,6 @@ export default function BookBtn() {
               padding: "10px",
               width: "100%",
               height: "100%",
-              overflow: "auto",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -91,12 +90,15 @@ export default function BookBtn() {
               className="flex flex-col rounded-3xl"
               style={{
                 position: "relative",
+                height: "100%",
+                overflow: "auto",
+                maxHeight: "530px",
                 width: "100%",
                 maxWidth: "500px",
                 backgroundColor: "white",
               }}
             >
-              <div className="w-full h-14 bg-modal flex justify-end items-center p-4 rounded-t-3xl">
+              <div className="sticky top-0 backdrop-blur-md w-full h-14 bg-modal flex justify-end items-center p-4 rounded-t-3xl">
                 <IconButton
                   className="hover:scale-110 transition-all duration-200"
                   style={{
@@ -113,7 +115,7 @@ export default function BookBtn() {
                   <Icon icon="line-md:close-small" />
                 </IconButton>
               </div>
-              <div className="flex flex-col items-center gap-5 my-10 px-4">
+              <div className="flex-1 flex flex-col items-center gap-5 my-10 px-4">
                 <p className="text-primary text-lg text-center animate-in slide-in-from-bottom fade-in-0 ease-in-out duration-200">
                   Iltimos, operatorlarimiz siz bilan bog&apos;lanishi uchun
                   aloqa ma&apos;lumotlaringizni qoldiring
@@ -168,7 +170,7 @@ export default function BookBtn() {
                   bog’lanadi.
                 </p>
               </div>
-              <div className="h-14 bg-modal rounded-b-3xl"></div>
+              <div className="w-full h-14 bg-modal flex justify-end items-center p-4 rounded-b-3xl"></div>
             </Box>
           </Box>
         </Fade>
