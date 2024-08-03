@@ -1,15 +1,18 @@
 import React from "react";
 import Image from "next/image";
 import AboutUsImg from "@/public/assets/about_us.png";
+import { useTranslation } from "@/src/app/i18n";
+import { Span } from "next/dist/trace";
 
 type AboutType = {
   lng: supportedLangs;
 };
-export default function About({ lng }: AboutType) {
+export default async function About({ lng }: AboutType) {
+  const { t } = await useTranslation(lng, ["navbar", "page"]);
   return (
     <div className="pb-12 pt-24" id="about">
       <h3 className="text-center text-4xl text-primary font-semibold">
-        Biz Haqimizda
+        {t("navbar:about")}
       </h3>
       <div className="w-full max-w-[1350px] m-auto p-4 relative">
         <Image
@@ -19,39 +22,36 @@ export default function About({ lng }: AboutType) {
           style={{ right: "0%" }}
         />
         <p className="text-primary text-lg mt-2 about_text">
-          Bizning kompaniyamiz 2024 yilda Toshkentda tashkil etilgan
-          bo&apos;lib, jadal <br />
-          rivojlanib, dunyo bo&apos;ylab noyob turlar va sayohatlar taklif
-          etmoqda. <br />
-          Biz unutilmas taassurotlar yaratish va mijozlarimizga yangi <br />
-          madaniyatlar, tarixlar va tabiat go&apos;zalliklarini kashf etish{" "}
-          <br />
-          imkoniyatini berishdan faxrlanamiz. <br />
+          {JSON.parse(t("page:about_sec_1")).map(
+            (about: string, index: number) => (
+              <>
+                <span key={index}>{about}</span>
+                <br />
+              </>
+            )
+          )}
         </p>
         <br />
         <p className="text-primary text-lg about_text">
-          Biz - o&apos;z ishiga bag&apos;ishlangan, yosh va dinamik <br />
-          mutaxassislar jamoasimiz. Gidlarimiz va <br />
-          tashkilotchilarimiz har bir sayohatni <br />
-          mijozlarning barcha istaklari va <br />
-          afzalliklarini hisobga olgan holda diqqat <br />
-          bilan rejalashtiradilar. Har bir <br />
+          {JSON.parse(t("page:about_sec_2")).map(
+            (about: string, index: number) => (
+              <>
+                <span key={index}>{about}</span>
+                <br />
+              </>
+            )
+          )}
         </p>
         <br />
         <p className="text-primary text-lg about_text">
-          sayohat haqiqiy sarguzashtga aylanishi uchun <br />
-          eng yaxshi yo&apos;nalishlarni taklif qilishga intilamiz. <br />
-          Tashkil etilganimizdan beri biz yuqori sifatli xizmat va har <br />
-          bir sayohatchiga individual yondashuv tufayli <br />
-          mijozlarimizning ishonchini qozondik. Yevropaga tarixiy <br />
-          ekskursiyalar, Tailandda plyaj dam olish yoki Afrikada hayajonli{" "}
-          <br />
-          safari bo&apos;ladimi, biz har doim eng qiziqarli va unutilmas <br />
-          yo&apos;nalishlarni taklif qilishga tayyormiz. Bizga qo&apos;shiling
-          va dunyoni <br />
-          yangi nuqtai nazardan kashf eting! Sizning sarguzashtingiz bu yerda{" "}
-          <br />
-          boshlanadi. <br />
+          {JSON.parse(t("page:about_sec_3")).map(
+            (about: string, index: number) => (
+              <>
+                <span key={index}>{about}</span>
+                <br />
+              </>
+            )
+          )}
         </p>
         <Image
           src={AboutUsImg}

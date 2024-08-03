@@ -1,11 +1,14 @@
 import React from "react";
 import type { priority } from "../assets/prioritiesList";
 import Image from "next/image";
+import { useTranslation } from "@/src/app/i18n";
 
 type PriorityType = {
   priority: priority;
+  lng: supportedLangs;
 };
-export default function Priority({ priority }: PriorityType) {
+export default async function Priority({ priority, lng }: PriorityType) {
+  const { t } = await useTranslation(lng, "page");
   return (
     <div className="relative sm:h-full h-56 sm:mt-0 mt-2">
       <div
@@ -18,7 +21,7 @@ export default function Priority({ priority }: PriorityType) {
           className="m-auto sm:w-28 h-auto w-14"
         />
         <h3 className="text-primary sm:text-2xl text-base font-semibold text-center">
-          {priority.title}
+          {t(priority.title)}
         </h3>
       </div>
       <div className="absolute bg-primary rounded-tl-3xl rounded-br-xl sm:w-14 w-10 h-auto aspect-square sm:-bottom-4 sm:-left-4 -bottom-2 -left-2"></div>

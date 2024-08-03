@@ -1,4 +1,5 @@
 "use client";
+import { useTranslation } from "@/src/app/i18n/client";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import {
   Box,
@@ -14,8 +15,12 @@ import Fade from "@mui/material/Fade";
 import { MuiTelInput } from "mui-tel-input";
 import React from "react";
 
-export default function BookBtn() {
+type BookBtnType = {
+  lng: supportedLangs;
+};
+export default function BookBtn({ lng }: BookBtnType) {
   const matches = useMediaQuery("(min-width:768px)");
+  const { t } = useTranslation(lng, "page");
   const [open, setOpen] = React.useState(false);
   const [name, setName] = React.useState("");
   const [phone, setPhone] = React.useState("");
@@ -48,7 +53,7 @@ export default function BookBtn() {
         })}
       >
         <span>
-          Buyurtma berish
+          {t("heroBtn")}
           <span
             style={{
               marginLeft: "5px",
@@ -117,12 +122,11 @@ export default function BookBtn() {
               </div>
               <div className="flex-1 flex flex-col items-center gap-5 my-10 px-4">
                 <p className="text-primary text-lg text-center animate-in slide-in-from-bottom fade-in-0 ease-in-out duration-200">
-                  Iltimos, operatorlarimiz siz bilan bog&apos;lanishi uchun
-                  aloqa ma&apos;lumotlaringizni qoldiring
+                  {t("modalTitle")}
                 </p>
                 <TextField
                   fullWidth
-                  label="Sizning Ismingiz"
+                  label={t("modalNameInput")}
                   id="fullWidth"
                   value={name}
                   onChange={(
@@ -134,14 +138,16 @@ export default function BookBtn() {
                 />
                 <div className="w-full max-w-[400px] flex flex-col justify-center animate-in slide-in-from-bottom fade-in-0 ease-in-out duration-500">
                   <label className="text-left mb-1" htmlFor="muiTel">
-                    Sizning Aloqa raqamingiz
+                    {t("modalPhoneInput")}
                   </label>
                   <MuiTelInput
                     id="muiTel"
                     name="muiTel"
                     value={phone}
+                    disableDropdown
                     onChange={handlePhoneChange}
                     defaultCountry="UZ"
+                    className="mui-tel-input"
                     style={{ width: "100%", maxWidth: "400px" }}
                   />
                 </div>
@@ -162,12 +168,10 @@ export default function BookBtn() {
                     lineHeight: "1.2",
                   })}
                 >
-                  Buyurtma berish
+                  {t("heroBtn")}
                 </Button>
                 <p className="w-full max-w-[300px] text-center text-xs text-gray-400 animate-in slide-in-from-bottom fade-in-0 ease-in-out duration-1000">
-                  Ma’lumotlarni to’ldirib “Buyurtma berish” tugmasini bosish
-                  orqali ma’lumotlar yuboriladi va operator siz bilan tez orqada
-                  bog’lanadi.
+                  {t("modalInfo")}
                 </p>
               </div>
               <div className="w-full h-14 bg-modal flex justify-end items-center p-4 rounded-b-3xl"></div>

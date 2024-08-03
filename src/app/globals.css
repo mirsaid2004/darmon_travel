@@ -88,3 +88,10 @@ body {
     rgba(241, 243, 255, 1) 80%
   );
 }
+
+.mui-tel-input .MuiInputAdornment-root {
+  display: none !important;
+}
+.mui-tel-input .MuiInputBase-root {
+  padding-left: 2px !important;
+}

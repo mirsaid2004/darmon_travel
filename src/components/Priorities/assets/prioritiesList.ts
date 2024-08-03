@@ -12,10 +12,10 @@ export type priority = {
   title: string;
 };
 export const prioritiesList: priority[] = [
-  { id: "individual", logo: individual, title: "Individual yondashuv" },
-  { id: "star", logo: star, title: "Tajriba va professionallik" },
-  { id: "route", logo: route, title: "Keng yo'nalishlar tanlovi" },
-  { id: "safety", logo: safety, title: "Ishonchlilik va xavfsizlik" },
-  { id: "price", logo: price, title: "Raqobatbardosh narxlar" },
-  { id: "callCenter", logo: callCenter, title: "24/7 qo'llab-quvvatlash" },
+  { id: "individual", logo: individual, title: "priority_1" },
+  { id: "star", logo: star, title: "priority_2" },
+  { id: "route", logo: route, title: "priority_3" },
+  { id: "safety", logo: safety, title: "priority_4" },
+  { id: "price", logo: price, title: "priority_5" },
+  { id: "callCenter", logo: callCenter, title: "priority_6" },
 ];
