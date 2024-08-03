@@ -1,8 +1,8 @@
-import { Tour, tourList } from "@/src/assets/tourList";
-import { redirect } from "next/navigation";
+import { Tour } from "@/src/assets/tourList";
 import React from "react";
 import TourInfoImgs from "./components/TourInfoImgs";
 import clsx from "clsx";
+import { useTranslation } from "@/src/app/i18n";
 
 type TourInfoType = {
   lng: supportedLangs;
@@ -11,6 +11,8 @@ type TourInfoType = {
 };
 
 export default async function TourInfo({ lng, tour, className }: TourInfoType) {
+  const { t } = await useTranslation(lng, "tour");
+
   return (
     <div className="mt-5">
       <div
@@ -21,9 +23,9 @@ export default async function TourInfo({ lng, tour, className }: TourInfoType) {
       >
         <div className="text-primary md:w-1/2 md:flex md:flex-col md:justify-center">
           <h2 className="lg:text-xl text-lg font-semibold mb-3">
-            {tour.title}
+            {t(tour.title)}
           </h2>
-          {tour.tourInfo.map((info, index) => (
+          {JSON.parse(t(tour.tourInfo))?.map((info: string, index: number) => (
             <div key={index} className="lg:text-lg">
               {" "}
               <p>{info}</p>

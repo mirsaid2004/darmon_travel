@@ -1,27 +1,29 @@
+import turkeyBg from "@/public/assets/turkiya_bg.png";
+import egyptBg from "@/public/assets/egypt_bg.png";
+import baaBg from "@/public/assets/baa_bg.png";
+import { StaticImageData } from "next/image";
+
 export type TourProgram = {
   title: string;
   name: string;
-  priorities: string[];
+  priorities: string;
 };
 
 export type Tour = {
   id: string;
   title: string;
-  tourInfo: string[];
+  tourInfo: string;
   tourImgs: string[];
   programs: TourProgram[];
   children?: Tour;
+  mainImg?: StaticImageData;
 };
 
 export const tourList: Tour[] = [
   {
     id: "turkiya",
-    title: "Turkiya Istanbul: Asrlar Kesisgan Abadiy Shahar",
-    tourInfo: [
-      "Istanbulga xush kelibsiz – Sharq va G'arb kesisadigan, sehr va tarixiy atmosfera yaratgan shahar.Siz Sultonahmetning jozibali dunyosiga sho'ng'ishingiz, u yerda tor ko'chalar sizni buyuk Ko'k masjid va Aya Sofiyaga olib boradi.",
-      "Sultonahmet bo'ylab sayohat sizni Vizantiya va Usmoniy imperiyasining uzoq davrlariga olib boradi.  Shahar ramzi bo'lgan Topqapi saroyi, Usmoniy sultonlarining rezidensiyasi, sizni boylik va haremning intrigalariga cho'mdiradi.",
-      "Mashhur Katta Bozor bo'ylab yuring, bu yerda siz noyob suvenirlar, ziravorlar va antikvar buyumlarni topasiz. Bosfor bo'yidagi ajoyib manzaralardan bahramand bo'ling va Istanbulning ruhini his eting. Turni Dolmabahche saroyi, Usmoniy davrining boylik va nafislik ramzi, bilan yakunlang.",
-    ],
+    title: "turkey_tour_title",
+    tourInfo: "turkey_tour_info",
     tourImgs: [
       "/assets/turkiya_1.jpg",
       "/assets/turkiya_2.webp",
@@ -33,37 +35,20 @@ export const tourList: Tour[] = [
     ],
     programs: [
       {
-        title: "Tur Istanbul: Dastur",
-        name: "TOSHKENT – ISTANBUL",
-        priorities: [
-          "Istanbul aeroportiga kelish.",
-          "Transfer va mehmonxonaga joylashish.",
-          "Gid bilan uchrashuv.",
-          "o'sh vaqt.",
-          "Istanbulda tunash.",
-        ],
+        title: "turkey_program_title_1",
+        name: "turkey_program_1_name",
+        priorities: "turkey_program_1_priorities",
       },
       {
-        title: "Tur Istanbul: Dastur",
-        name: "ISTANBUL EKSKURSIYASI",
-        priorities: [
-          "Mehmonxonada nonushta.",
-          "Ko'k Masjid va Aya Sofiyani ziyorat qilish.",
-          "Topqapi saroyini ko'rish.",
-          "Tushlik.",
-          "Katta Bozor va Bosfor bo'ylab sayohat.",
-          "Dolmabahche saroyini ziyorat qilish.",
-          "Mehmonxonada kechki ovqat.",
-          "Bo'sh vaqt.",
-        ],
+        title: "turkey_program_title_1",
+        name: "turkey_program_2_name",
+        priorities: "turkey_program_2_priorities",
       },
     ],
     children: {
       id: "antalia",
-      title: "Antaliya: Yerdagi Jannat",
-      tourInfo: [
-        "Tavr tog'lari bilan o'ralgan, yam-yashil go'zal Antaliya shahri – Turkiya Rivyerasining eng chiroyli shahri! Siz eski shahar Kaleichini ko'rasiz, bu yerda yam-yashil tepaliklarda qizil tomli kichik g'ishtli uylar tarqalgan. Shaharning ramzlari bo'lgan Riflenaya minora yoki \"gofra\" minora, shahar mudofaa devorlarining bir qismi bo'lgan soat minorasi. Shahar tarix va madaniyatga boy, shuningdek, zargarlik buyumlari, charm buyumlar va qo'l to'qilgan gilamlar katta savdo qiymatiga ega. Bundan tashqari, biz Antaliya sohilining durdonasi – Karpuzkaldiran sharsharasini ziyorat qilamiz, u 39 metr balandlikdan dengizga tushadi.",
-      ],
+      title: "antalia_tour_title",
+      tourInfo: "antalia_tour_info",
       tourImgs: [
         "/assets/antalia_1.webp",
         "/assets/antalia_2.jpg",
@@ -75,31 +60,81 @@ export const tourList: Tour[] = [
       ],
       programs: [
         {
-          title: "Tur Istanbul: Dastur",
-          name: "TOSHKENT – ISTANBUL",
-          priorities: [
-            "Istanbul aeroportiga kelish.",
-            "Transfer va mehmonxonaga joylashish.",
-            "Gid bilan uchrashuv.",
-            "o'sh vaqt.",
-            "Istanbulda tunash.",
-          ],
+          title: "antalia_program_title_1",
+          name: "antalia_program_1_name",
+          priorities: "antalia_program_1_priorities",
         },
         {
-          title: "Tur Istanbul: Dastur",
-          name: "ISTANBUL EKSKURSIYASI",
-          priorities: [
-            "Mehmonxonada nonushta.",
-            "Ko'k Masjid va Aya Sofiyani ziyorat qilish.",
-            "Topqapi saroyini ko'rish.",
-            "Tushlik.",
-            "Katta Bozor va Bosfor bo'ylab sayohat.",
-            "Dolmabahche saroyini ziyorat qilish.",
-            "Mehmonxonada kechki ovqat.",
-            "Bo'sh vaqt.",
-          ],
+          title: "antalia_program_title_1",
+          name: "antalia_program_2_name",
+          priorities: "antalia_program_2_priorities",
         },
       ],
     },
+    mainImg: turkeyBg,
+  },
+  {
+    id: "misr",
+    title: "egypt_tour_title",
+    tourInfo: "egypt_tour_info",
+    tourImgs: [
+      "/assets/egypt_1.jpg",
+      "/assets/egypt_2.jpg",
+      "/assets/egypt_3.jpg",
+      "/assets/egypt_4.jpg",
+      "/assets/egypt_5.jpg",
+      "/assets/egypt_6.jpg",
+      "/assets/egypt_7.jpg",
+    ],
+    programs: [
+      {
+        title: "egypt_program_title_1",
+        name: "egypt_program_1_name",
+        priorities: "egypt_program_1_priorities",
+      },
+      {
+        title: "egypt_program_title_1",
+        name: "egypt_program_2_name",
+        priorities: "egypt_program_2_priorities",
+      },
+      {
+        title: "egypt_program_title_1",
+        name: "egypt_program_3_name",
+        priorities: "egypt_program_3_priorities",
+      },
+    ],
+    mainImg: egyptBg,
+  },
+  {
+    id: "baa",
+    title: "egypt_tour_title",
+    tourInfo: "egypt_tour_info",
+    tourImgs: [
+      "/assets/uae_1.avif",
+      "/assets/uae_2.jpg",
+      "/assets/uae_3.jpg",
+      "/assets/uae_4.jpg",
+      "/assets/uae_5.jpg",
+      "/assets/uae_6.jpg",
+      "/assets/uae_7.jpg",
+    ],
+    programs: [
+      {
+        title: "egypt_program_title_1",
+        name: "egypt_program_1_name",
+        priorities: "egypt_program_1_priorities",
+      },
+      {
+        title: "egypt_program_title_1",
+        name: "egypt_program_2_name",
+        priorities: "egypt_program_2_priorities",
+      },
+      {
+        title: "egypt_program_title_1",
+        name: "egypt_program_3_name",
+        priorities: "egypt_program_3_priorities",
+      },
+    ],
+    mainImg: baaBg,
   },
 ];

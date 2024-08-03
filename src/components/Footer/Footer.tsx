@@ -3,11 +3,13 @@ import Image from "next/image";
 import footerBg from "@/public/assets/footerBg.png";
 import CallMeComponent from "./components/CallMeComponent";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import { useTranslation } from "@/src/app/i18n";
 
 type FooterType = {
   lng: supportedLangs;
 };
-export default function Footer({ lng }: FooterType) {
+export default async function Footer({ lng }: FooterType) {
+  const { t } = await useTranslation(lng, "page");
   return (
     <footer className="w-full bg-primary" id="contact">
       <div className="w-full max-w-[1350px] m-auto px-4">
@@ -18,12 +20,8 @@ export default function Footer({ lng }: FooterType) {
             className="absolute top-0 left-0 w-full h-full object-cover object-center"
           />
           <div className="relative z-10 text-white max-w-[600px]">
-            <p className="text-2xl">
-              Biz har doim sizning savollaringiz va takliflaringizga ochiqmiz.
-              Biz bilan qulay usulda bog&apos;laning, va bizning jamoamiz sizga
-              imkon qadar tezroq javob beradi.
-            </p>
-            <CallMeComponent />
+            <p className="text-2xl">{t("footer_text")}</p>
+            <CallMeComponent lng={lng} />
           </div>
         </div>
         <div className="w-full flex flex-wrap gap-3 items-start justify-between mt-6">
@@ -34,10 +32,10 @@ export default function Footer({ lng }: FooterType) {
           <h3 className="text-xl text-white text-end gap-2">
             <span className="inline-flex">
               <Icon icon="mdi:location" style={{ marginTop: "2px" }} />
-              Toshkent, O&apos;zbekiston
+              {t("footer_location_1")}
             </span>
             <br />
-            <span>Chilonzor 18/19 uy</span>
+            <span>{t("footer_location_2")}</span>
           </h3>
         </div>
         <div className="w-full flex justify-between">
@@ -57,7 +55,7 @@ export default function Footer({ lng }: FooterType) {
           </div>
         </div>
         <div className="w-full border-t-[1px] border-white text-center text-xl text-white mt-8 py-5">
-          DarmonTravel 2024
+          © {new Date().getFullYear()} DarmonTravel. All rights reserved
         </div>
       </div>
     </footer>
