@@ -19,6 +19,8 @@ export default function TourInfoImgs({ imgs }: { imgs: string[] }) {
           <a data-fancybox="gallery" href={imgs[0]}>
             <Image
               alt="alt"
+              priority
+              quality={70}
               src={imgs[0]}
               width="240"
               height="300"
@@ -33,6 +35,8 @@ export default function TourInfoImgs({ imgs }: { imgs: string[] }) {
           <a data-fancybox="gallery" href={imgs[1]}>
             <Image
               alt="alt"
+              priority
+              quality={70}
               src={imgs[1]}
               width="240"
               height="300"
@@ -49,6 +53,8 @@ export default function TourInfoImgs({ imgs }: { imgs: string[] }) {
           <a data-fancybox="gallery" href={imgs[2]}>
             <Image
               alt="alt"
+              priority
+              quality={70}
               src={imgs[2]}
               width="240"
               height="300"
@@ -63,6 +69,8 @@ export default function TourInfoImgs({ imgs }: { imgs: string[] }) {
           <a data-fancybox="gallery" href={imgs[3]}>
             <Image
               alt="alt"
+              priority
+              quality={70}
               src={imgs[3]}
               width="240"
               height="300"
@@ -77,6 +85,8 @@ export default function TourInfoImgs({ imgs }: { imgs: string[] }) {
           <a data-fancybox="gallery" href={imgs[4]}>
             <Image
               alt="alt"
+              priority
+              quality={70}
               src={imgs[4]}
               width="240"
               height="300"
@@ -93,6 +103,8 @@ export default function TourInfoImgs({ imgs }: { imgs: string[] }) {
           <a data-fancybox="gallery" href={imgs[5]}>
             <Image
               alt="alt"
+              priority
+              quality={70}
               src={imgs[5]}
               width="240"
               height="300"
@@ -107,6 +119,8 @@ export default function TourInfoImgs({ imgs }: { imgs: string[] }) {
           <a data-fancybox="gallery" href={imgs[6]}>
             <Image
               alt="alt"
+              priority
+              quality={70}
               src={imgs[6]}
               width="240"
               height="300"
